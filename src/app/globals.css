@@ -1,0 +1,209 @@
+:root {
+  --background-dark: #0A1118;
+  --background-dark-alt: #0D1520;
+  --background-light: #ffffff;
+  --background-alt: #F0F4F8;
+  --foreground-dark: #ffffff;
+  --foreground-light: #1a202c;
+  --accent: #47D7D1;
+  --accent-hover: #38B2AC;
+  --accent-purple: #8B5CF6;
+  --accent-blue: #3B82F6;
+  --accent-green: #10b981;
+  --text-muted-dark: #94A3B8;
+  --text-muted-light: #64748B;
+  --container-width: 1200px;
+  --spacing-section: 6rem;
+  --card-radius: 20px;
+
+  /* Gradients */
+  --hero-gradient: linear-gradient(135deg, #0A1118 0%, #0D1520 50%, #111827 100%);
+  --gradient-accent: linear-gradient(135deg, var(--accent-purple), var(--accent-blue), var(--accent));
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--foreground-light);
+  background: var(--background-light);
+  font-family: var(--body-font), 'Inter', sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--heading-font), 'Montserrat', sans-serif;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+/* Typography Weights */
+h1 {
+  font-weight: 800;
+}
+
+h2 {
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+/* Thin uppercase variant for certain section titles */
+h2.section-title {
+  font-weight: 300;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-weight: 600;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Button Styles */
+.btn {
+  display: inline-block;
+  background: var(--accent);
+  color: #0A1118;
+  padding: 0.9rem 2.2rem;
+  border-radius: 50px;
+  font-weight: 700;
+  border: 2px solid var(--accent);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: var(--heading-font), 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn:hover {
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(71, 215, 209, 0.35);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--accent);
+}
+
+.btn-outline:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* Section Utilities */
+.section {
+  padding: var(--spacing-section) 0;
+}
+
+.section-dark {
+  background: var(--background-dark);
+  color: var(--foreground-dark);
+}
+
+.section-light {
+  background: var(--background-light);
+  color: var(--foreground-light);
+}
+
+.section-alt {
+  background: var(--background-alt);
+  color: var(--foreground-light);
+}
+
+/* Responsive typography */
+@media (max-width: 768px) {
+  :root {
+    --spacing-section: 4rem;
+  }
+
+  h1 {
+    font-size: 2rem !important;
+  }
+
+  h2,
+  .section-title {
+    font-size: 1.75rem !important;
+  }
+
+  h3 {
+    font-size: 1.25rem !important;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --spacing-section: 3rem;
+  }
+
+  h1 {
+    font-size: 1.5rem !important;
+  }
+
+  h2,
+  .section-title {
+    font-size: 1.4rem !important;
+  }
+}
+
+/* Page wrapper */
+.main-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-content {
+  flex: 1;
+}
+
+/* ── Global gradient image borders (molaire wave colors) ── */
+
+.feladat-image {
+  border: 2px solid transparent !important;
+  background-image: linear-gradient(#fff, #fff), linear-gradient(135deg, #8B5CF6, #3B82F6, #47D7D1, #2DD4BF) !important;
+  background-origin: border-box !important;
+  background-clip: padding-box, border-box !important;
+}
+
+.hero-dashboard-img {
+  border: 2px solid transparent !important;
+  background-image: linear-gradient(var(--background-dark, #0A1118), var(--background-dark, #0A1118)), linear-gradient(135deg, #8B5CF6, #3B82F6, #47D7D1, #2DD4BF) !important;
+  background-origin: border-box !important;
+  background-clip: padding-box, border-box !important;
+}
